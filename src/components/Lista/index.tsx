@@ -1,3 +1,4 @@
+import Item from './Item'
 import style from './Lista.module.scss'
 
 export default function Lista() {
@@ -19,11 +20,8 @@ export default function Lista() {
     <aside className={style.listaTarefas}>
       <h2>Estudos do dia</h2>
       <ul>
-        {tarefas.map(({ tarefa, tempo }, index) => (
-          <li className={style.item} key={index}>
-            <h3>{tarefa}</h3>
-            <span>{tempo}</span>
-          </li>
+        {tarefas.map((item, index) => (
+          <Item key={index} {...item} />
         ))}
       </ul>
     </aside>
